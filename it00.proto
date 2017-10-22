@@ -1,0 +1,18 @@
+/* Mastercard Blockchain Auth Services Protocol */
+syntax="proto3";
+packageMAT1;
+messageAuthorize{stringreference=1;
+int64amount_minor_units=2;
+stringcurrency=3;
+stringpan=4;
+stringdescription=5;
+stringpos_id=6;
+stringmerchant_id=7;
+}
+/* N.B. hash_reference contains the value obtained by
+double-hashing a binary-encoded copy of the
+Authorize message, defined above, with SHA-256. */
+messageAuthorization{
+byteshash_reference=1;
+bytessignature=2;
+}
